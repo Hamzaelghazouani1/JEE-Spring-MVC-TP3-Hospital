@@ -3,7 +3,7 @@
 ### Création de l'entité et configuration JPA
 * Définition de l'entité Patient
 
-* L'ajout des annotations JPA (@Entity, @Data, @NoArgsConstructor, @AllArgsConstructor, @Builder).
+* L'ajout des annotations JPA (`@Entity`, `@Data`, `@NoArgsConstructor`, `@AllArgsConstructor`, `@Builder`).
 Configuration de JPA et H2
 
 * Configurez la base de données H2 dans le fichier application.yml en spécifiant l'URL.
@@ -18,7 +18,20 @@ Accédez à la console H2 via l'URL fournie : http://localhost:8080/h2-console
 
 * Création de la vue patient.html
 
-* Utilisation de Thymeleaf (ou tout autre moteur de template) pour intégrer dynamiquement les données.
+* Utilisation de Thymeleaf pour intégrer dynamiquement les données.
 
 Testez l'affichage des patients dans la vue :
 ![controller-view-screen.png](src/main/resources/assets-screen/controller-view-screen.png)
+
+
+### Ajouter la dépendance de `webjars/bootstrap`
+
+```xml
+<dependency>
+    <groupId>org.webjars</groupId>
+    <artifactId>bootstrap</artifactId>
+    <version>5.3.3</version>
+</dependency>
+```
+![bootstrap-add-screen.png](src/main/resources/assets-screen/bootstrap-add-screen.png)
+
