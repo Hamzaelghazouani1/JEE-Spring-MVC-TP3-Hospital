@@ -12,3 +12,13 @@ Accédez à la console H2 via l'URL fournie : http://localhost:8080/h2-console
 
 ![db-screen.png](src/main/resources/assets-screen/db-screen.png)
 
+### Création du PatientsController et de la vue patient.html
+
+* Création du contrôleur PatientsController
+
+* Création de la vue patient.html
+
+* Utilisation de Thymeleaf (ou tout autre moteur de template) pour intégrer dynamiquement les données.
+
+Testez l'affichage des patients dans la vue :
+![controller-view-screen.png](src/main/resources/assets-screen/controller-view-screen.png)
