@@ -21,6 +21,7 @@
                     <th>Date</th>
                     <th>Malade</th>
                     <th>Score</th>
+                    <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -30,6 +31,10 @@
                     <td th:text="${patient.dateNaissance}"></td>
                     <td th:text="${patient.malade}"></td>
                     <td th:text="${patient.score}"></td>
+                    <td>
+                        <a onclick="javascript:return confirm('Tees vous sure?')"
+                                th:href="@{delete(id=${patient.id}, search=${search}, page=${currentPage})}" class="btn btn-danger">Delete</a>
+                    </td>
                 </tr>
                 </tbody>
             </table>
