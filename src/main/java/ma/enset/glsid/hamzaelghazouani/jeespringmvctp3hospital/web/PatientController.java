@@ -19,10 +19,16 @@ public class PatientController {
     private PatientRepository patientRepository;
 
     @GetMapping("/index")
-    public String index(Model model, @RequestParam(name = "page", defaultValue = "0") int page, @RequestParam(name = "size", defaultValue = "1") int size){
-        Page<Patient> patients = patientRepository.findAll(PageRequest.of(page,size));
+    public String index(Model model,
+                        @RequestParam(name = "page", defaultValue = "0") int page,
+                        @RequestParam(name = "size", defaultValue = "1") int size,
+                        @RequestParam(name = "search", defaultValue = "") String search
+                        ){
+        Page<Patient> patients = patientRepository.findPatientByNomContains(search,PageRequest.of(page,size));
         model.addAttribute("patients",patients.getContent());
         model.addAttribute("pages", new int[patients.getTotalPages()]);
+        model.addAttribute("currentPage",page);
+        model.addAttribute("search", search);
         return "patients";
     }
 }
