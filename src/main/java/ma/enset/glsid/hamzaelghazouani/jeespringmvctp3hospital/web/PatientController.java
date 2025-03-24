@@ -18,7 +18,7 @@ import java.util.List;
 public class PatientController {
     private PatientRepository patientRepository;
 
-    @GetMapping("/index")
+    @GetMapping("")
     public String index(Model model,
                         @RequestParam(name = "page", defaultValue = "0") int page,
                         @RequestParam(name = "size", defaultValue = "1") int size,
@@ -36,5 +36,16 @@ public class PatientController {
     public String delete(Long id, String search, int page){
         patientRepository.deleteById(id);
         return "redirect:/index?page="+page+"&search="+search+"";
+    }
+
+    @GetMapping("/patients")
+    public List<Patient> getPatients(){
+        return patientRepository.findAll();
+    }
+
+    @GetMapping("/fromPatients")
+    public String fromPatients(Model model){
+        model.addAttribute("patient",new Patient());
+        return "formPatients";
     }
 }
